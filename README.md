@@ -7,6 +7,7 @@
 #### **Khái niệm**
 Blockchain là công nghệ chuỗi – khối, cho phép truyền tải dữ liệu một cách an toàn dựa trên hệ thống mã hóa vô cùng phức tạp, tương tự như cuốn sổ cái kế toán của một công ty, nơi mà tiền được giám sát chặt chẽ và ghi nhận mọi giao dịch trên mạng ngang hàng. 
 Mỗi khối (block) đều chứa thông tin về thời gian khởi tạo và được liên kết với khối trước đó, kèm theo đó là một mã thời gian và dữ liệu giao dịch. Dữ liệu khi đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được. Blockchain được thiết kế để **chống lại việc gian lận, thay đổi của dữ liệu.**
+
 ![image](https://user-images.githubusercontent.com/106605829/204236125-22e718d2-5235-4c0b-88d9-3699b461d91c.png)
 
 #### **Công nghệ Blockchain – sự kết hợp giữa 3 loại công nghệ:**
@@ -14,16 +15,18 @@ Mỗi khối (block) đều chứa thông tin về thời gian khởi tạo và 
 - **Mạng ngang hàng**: Mỗi một nút trong mạng được xem như một client và cũng là server để lưu trữ bản sao ứng dụng.
 - **Lý thuyết trò chơi**: Tất cả các nút tham gia vào hệ thống đều phải tuân thủ luật chơi đồng thuận (giao thức PoW, PoS,…) và được thúc đẩy bởi động lực kinh tế.
 
-####**Hệ thống Blockchain chia thành 3 loại chính:**
+#### **Hệ thống Blockchain chia thành 3 loại chính:**
 - **Public**: Bất kỳ ai cũng có quyền đọc và ghi dữ liệu trên Blockchain. Quá trình xác thực giao dịch trên Blockchain này đòi hỏi phải có rất nhiều nút tham gia. Vì vậy, muốn tấn công được vào hệ thống Blockchain này cần chi phí rất lớn và thực sự không khả thi. Ví dụ: Bitcoin, Ethereum,…
 - **Private**: Người dùng chỉ được quyền đọc dữ liệu, không có quyền ghi vì điều này thuộc về bên tổ chức thứ ba tuyệt đối tin cậy. Vì đây là một Private Blockchain, cho nên thời gian xác nhận giao dịch khá nhanh vì chỉ cần một lượng nhỏ thiết bị tham gia xác thực giao dịch. Ví dụ: Ripple là một dạng Private Blockchain, hệ thống này cho phép 20% các nút là gian dối và chỉ cần 80% còn lại hoạt động ổn định là được.
 - **Permissioned (hay còn gọi là Consortium)**: một dạng của Private nhưng bổ sung thêm 1 số tính năng khác, đây là sự kết hợp giữa Public và Private. Ví dụ: Các ngân hàng hay tổ chức tài chính liên doanh sẽ sử dụng Blockchain cho riêng mình.
+- 
 ![image](https://user-images.githubusercontent.com/106605829/204236174-74672f6b-c2cd-4792-b088-681d8575f5ab.png)
 
 #### **Các phiên bản của công nghệ Blockchain**
 - **Công nghệ Blockchain 1.0** – Tiền tệ và Thanh toán: Ứng dụng chính của phiên bản này là tiền mã hoá: bao gồm việc chuyển đổi tiền tệ, kiều hối và tạo lập hệ thống thanh toán kỹ thuật số. Đây cũng là lĩnh vực quen thuộc với chúng ta nhất mà đôi khi khá nhiều người lầm tưởng Bitcoin và Blockchain là một.
 - **Công nghệ Blockchain 2.0** – Tài chính và Thị trường: Ứng dụng xử lý tài chính và ngân hàng: mở rộng quy mô của Blockchain, đưa vào các ứng dụng tài chính và thị trường. Các tài sản bao gồm cổ phiếu, chi phiếu, nợ, quyền sở hữu và bất kỳ điều gì có liên quan đến thỏa thuận hay hợp đồng.
 - **Công nghệ Blockchain 3.0** – Thiết kế và Giám sát hoạt động:  Đưa Blockchain vượt khỏi biên giới tài chính, và đi vào các lĩnh vực như giáo dục, chính phủ, y tế và nghệ thuật. 
+- 
 ![image](https://user-images.githubusercontent.com/106605829/204236267-2cb87e85-589d-4afa-b6e8-f838319354b1.png)
 
 ### **2. Các đặc điểm nổi bật của Blockchain**
@@ -41,9 +44,11 @@ Mỗi khối (block) đều chứa thông tin về thời gian khởi tạo và 
 Ứng dụng được biết đến và thảo luận nhiều nhất về công nghệ Blockchain chính là **đồng tiền điện tử**. Bitcoin là một đơn vị tiền tệ kỹ thuật số với mã là BTC, cũng giống như đô la Mỹ bản thân nó không mang giá trị, nó chỉ có giá trị bởi vì có một cộng đồng đồng ý sử dụng nó làm đơn vị giao dịch hàng hóa và dịch vụ.
 
 Để theo dõi số lượng Bitcoin mà mỗi người sở hữu trong các tài khoản nhất định và theo dõi các giao dịch phát sinh từ đó thì chúng ta cần đến một **cuốn sổ kế toán**, trong trường hợp này nó chính là Blockchain và đây thực tế là một tệp kỹ thuật số theo dõi tất cả các giao dịch Bitcoin.
+
 ![image](https://user-images.githubusercontent.com/106605829/204236434-fb436a6c-c76f-432e-ad36-7e3524f8e5df.png)
 
 Tệp sổ cái này không được lưu trữ trong một máy chủ trung tâm, như trong một ngân hàng hoặc trong một trung tâm dữ liệu mà ngược lại nó được phân phối trên toàn thế giới thông qua một mạng lưới các máy tính ngang hàng với vai trò lưu trữ dữ liệu và thực thi các tính toán. Mỗi máy tính này đại diện cho một “nút” của mạng lưới Blockchain và mỗi nút đều có một bản sao của tệp sổ cái này.
+
 ![image](https://user-images.githubusercontent.com/106605829/204236515-b8cf3aec-0c9e-429c-84b2-018a4722e038.png)
 
 #### **Nguyên lý mã hoá**
