@@ -6,7 +6,10 @@
 
 #### **Khái niệm**
 Blockchain là công nghệ chuỗi – khối, cho phép truyền tải dữ liệu một cách an toàn dựa trên hệ thống mã hóa vô cùng phức tạp, tương tự như cuốn sổ cái kế toán của một công ty, nơi mà tiền được giám sát chặt chẽ và ghi nhận mọi giao dịch trên mạng ngang hàng. 
-Mỗi khối (block) đều chứa thông tin về thời gian khởi tạo và được liên kết với khối trước đó, kèm theo đó là một mã thời gian và dữ liệu giao dịch. Dữ liệu khi đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được. Blockchain được thiết kế để **chống lại việc gian lận, thay đổi của dữ liệu.**
+
+Mỗi khối (block) đều chứa thông tin về thời gian khởi tạo và được liên kết với khối trước đó, kèm theo đó là một mã thời gian và dữ liệu giao dịch. Dữ liệu khi đã được mạng lưới chấp nhận thì sẽ không có cách nào thay đổi được.
+
+Blockchain được thiết kế để **chống lại việc gian lận, thay đổi của dữ liệu.**
 
 ![image](https://user-images.githubusercontent.com/106605829/204236125-22e718d2-5235-4c0b-88d9-3699b461d91c.png)
 
