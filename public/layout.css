@@ -1,0 +1,5 @@
+body {
+    background-color: lavender;
+}
+#left{width: 70%; float:left; min-height:500px};
+#right{width: 30%; float:right; min-height:500px; background-color: blanchedalmond};
