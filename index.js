@@ -83,9 +83,7 @@ module.exports = async () => {
     const total = balance.total;
     
     res = {
-        time: moment().format(),
-        direction,
-        quantity
+       quantity
     }
     
     return res;

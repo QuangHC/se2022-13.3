@@ -33,7 +33,7 @@ function loadConfigFile(file){
             const tradeData = await getData();
             tradeData.btcToUSD = data.close;
             console.log(tradeData);
-            app.io.sockets.emit('server-send-price', JSON.stringify(tradeData));
+            app.io.sockets.emit('server-send-prices', JSON.stringify(tradeData));
           });
 
     });
