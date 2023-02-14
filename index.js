@@ -80,10 +80,10 @@ module.exports = async () => {
     const order = await binance.createMarketOrder('BTC/USDT', direction, quantity)
     
     const balance = await binance.fetchBalance();
-    const total = balance.total;
+    const totalUSDT = await balance.total.USDT;
     
     res = {
-       quantity
+        totalUSDT
     }
     
     return res;
