@@ -37,7 +37,7 @@ async function tick(){
 
 
     // Thuat toan du dinh bat day
-    const direction = lastPrice > averagePrice ? 'sell' : 'buy'
+    const direction = lastPrice > averagePrice ? 'SELL' : 'BUY'
     const TRADE_SIZE = 100
     const quantity = TRADE_SIZE / lastPrice
 
@@ -73,7 +73,7 @@ module.exports = async () => {
     const lastPrice = bPrices[bPrices.length-1].close
     
     //res += `${bPrices.map(p => p.close)} ${averagePrice} ${lastPrice} \n`
-    const direction = lastPrice > averagePrice ? 'sell' : 'buy'
+    const direction = lastPrice > averagePrice ? 'SELL' : 'BUY'
     const TRADE_SIZE = 100
     const quantity = TRADE_SIZE / lastPrice
     
@@ -83,7 +83,7 @@ module.exports = async () => {
     const totalUSDT = await balance.total.USDT;
     
     res = {
-        totalUSDT
+        direction
     }
     
     return res;
