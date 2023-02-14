@@ -13,8 +13,8 @@ server.listen(3000);
 io.on("connection", function (socket) {
     console.log("New connection: " + socket.id);
 })
-var bot = require('./bot');
-bot.main;
+// var bot = require('./bot');
+// bot.main;
 loadConfigFile("./config.json");
 function loadConfigFile(file) {
     var obj;

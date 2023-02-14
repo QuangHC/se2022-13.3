@@ -1,5 +1,80 @@
-body {
-    background-color: lavender;
+body{
+    background-color: whitesmoke;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    background-image: url(https://khoinguonsangtao.vn/wp-content/uploads/2021/10/hinh-anh-chill.jpg);
 }
-#left{width: 70%; float:left; min-height:500px};
-#right{width: 30%; float:right; min-height:500px; background-color: blanchedalmond};
+
+#left {
+    width: 60%;
+    float: left;
+    min-height: 500px;
+}
+
+#right{
+    width: 37%;
+    background-color: aliceblue;
+    float: right;
+    min-height: 580px;
+}
+
+
+@keyframes filling {
+    from{
+      background-position: center 25%;
+    }
+    to {
+      background-position: center 50%;
+    }
+  }
+  
+  .container-text {
+    background-image:  url(https://img.lovepik.com/photo/50078/3259.jpg_wh860.jpg);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color:  #FFFFFF;
+    padding-top: 20px;
+    font-size: 80px;
+    animation: filling 3s ease forwards;
+  }
+
+.button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 28px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
