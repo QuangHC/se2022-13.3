@@ -22,15 +22,14 @@ async function printBalance() {
 async function tick() {
     const closes = [];
     const prices = await binance.fetchOHLCV('BTC/USDT', '1m', undefined, 14);
-   
+
     for (let i = 0; i < prices.length; i++) {
         closes.push(prices[i][4]);
     }
-    
+
     // Thuat toan chi so RSI
     console.log(closes);
     rsi = CalculateRsi(closes);
-    console.log(rsi);
     if (rsi > RSI_OVERBOUGHT) {
         console.log("SELL");
         await binance.createMarketOrder('BTC/USDT', 'sell', 0.01);
@@ -66,12 +65,18 @@ function CalculateRsi(closePrices) {
     return 100.0 - (100.0 / (1 + relativeStrength));
 }
 
-async function main() {
-    while (true) {
+var state = "";
+module.exports = async function trade(s) {
+    state = s;
+    while (state == "on") {
         await tick();
         await delay(60 * 100);
     }
-
 }
 
-main();
+
+
+
+
+
+
