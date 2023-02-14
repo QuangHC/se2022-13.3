@@ -6,13 +6,14 @@ module.exports = function (app, obj, binance) {
    
     app.get("/off", function(req, res) {
         console.log("Bot is ended!");
-        require('../bot')("off");
+        require('../bot')("off", 0.01);
         res.render("master");
     });
 
-    app.get("/on", function(req, res) {
+    app.get("/on/:amount", function(req, res) {
+        var quantity = parseFloat(req.params.amount);
         console.log("Bot is running!");
-        require('../bot')("on");
+        require('../bot')("on", quantity);
         res.render("master");
     });
 

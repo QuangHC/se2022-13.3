@@ -17,12 +17,15 @@
         });
         $(document).ready(function () {
             $("#on").click(function(){
-                $.get("./on", function(data) {
+                var amount = parseFloat($("#amount").val())
+                $.get("./on/"+amount, function(data) {
+                    alert("Bot is Running.")
                     console.log(data);
                 });
             });
             $("#off").click(function(){
                 $.get("./off", function(data) {
+                    alert("Bot is Ended.")  
                     console.log(data);
                 });
             });
@@ -73,6 +76,9 @@
             <h2 class="balance" style="font-size: 30px;">X</h2>
 
             <h1>TRADING BOT</h1>
+            <label for="amount">Amount: </label>
+            <input type="text" id="amount" name="amount" value="0.01" placeholder="0.01">
+
             <button class="button" id="on"><span>On </span></button>
             <button class="button"id="off"><span>Off </span></button>
         </div>  

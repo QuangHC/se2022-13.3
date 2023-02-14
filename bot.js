@@ -3,6 +3,7 @@ const moment = require('moment');
 const delay = require('delay');
 RSI_OVERBOUGHT = 70;
 RSI_OVERSOLD = 30;
+AMOUNT = 0.01;
 
 const binance = new ccxt.binance({
     apiKey: 'EPjRvlWCGUKEegQ6qxAYBR3EWEhpyV2PFJifroza4qbj7dH5xRWvehiNZQvAerUS',
@@ -19,9 +20,10 @@ async function printBalance() {
     // console.log(balance);
 }
 
-async function tick() {
+async function tick(amount) {
     const closes = [];
     const prices = await binance.fetchOHLCV('BTC/USDT', '1m', undefined, 14);
+    AMOUNT = amount;
 
     for (let i = 0; i < prices.length; i++) {
         closes.push(prices[i][4]);
@@ -30,13 +32,14 @@ async function tick() {
     // Thuat toan chi so RSI
     console.log(closes);
     rsi = CalculateRsi(closes);
+    console.log(AMOUNT);
     if (rsi > RSI_OVERBOUGHT) {
         console.log("SELL");
-        await binance.createMarketOrder('BTC/USDT', 'sell', 0.01);
+        await binance.createMarketOrder('BTC/USDT', 'sell', AMOUNT);
     }
     else if (rsi < RSI_OVERSOLD) {
         console.log("BUY");
-        await binance.createMarketOrder('BTC/USDT', 'buy', 0.01);
+        await binance.createMarketOrder('BTC/USDT', 'buy', AMOUNT);
     }
     else {
         console.log("Nothing");
@@ -66,10 +69,10 @@ function CalculateRsi(closePrices) {
 }
 
 var state = "";
-module.exports = async function trade(s) {
+module.exports = async function trade(s, amount) {
     state = s;
     while (state == "on") {
-        await tick();
+        await tick(amount);
         await delay(60 * 100);
     }
 }
