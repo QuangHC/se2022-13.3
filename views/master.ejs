@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Binance API</title>
     <link rel="stylesheet" href="./layout.css">
+    <link href='https://css.gg/close.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./socket.io/socket.io.js"></script>
     <script>
@@ -19,13 +20,13 @@
             $("#on").click(function(){
                 var amount = parseFloat($("#amount").val())
                 $.get("./on/"+amount, function(data) {
-                    alert("Bot is Running.")
+                    // alert("Bot is Running.")
                     console.log(data);
                 });
             });
             $("#off").click(function(){
                 $.get("./off", function(data) {
-                    alert("Bot is Ended.")  
+                    // alert("Bot is Ended.")  
                     console.log(data);
                 });
             });
@@ -34,6 +35,9 @@
 </head>
 
 <body>
+    <div class="message">
+        <i class="gg-close" style="position: absolute; right: 0; top: 0; z-index: 100;"></i>
+    </div>
     <div class="container-text">
         Binance Trading
     </div>
@@ -78,11 +82,28 @@
             <h1>TRADING BOT</h1>
             <label for="amount">Amount: </label>
             <input type="text" id="amount" name="amount" value="0.01" placeholder="0.01">
-
-            <button class="button" id="on"><span>On </span></button>
-            <button class="button"id="off"><span>Off </span></button>
+            <br>
+            <button class="button js-on" id="on"><span>On </span></button>
+            <button class="button js-off" id="off"><span>Off </span></button>
         </div>  
     </div>
 </body>
 
 </html>
+
+<script>
+    const btns = document.querySelectorAll('.button')
+    const mess = document.querySelector('.message')
+    const closeIcon = document.querySelector('.gg-close')
+  
+    function show(){
+        mess.classList.add('open')
+    }
+    function hide(){
+        mess.classList.remove('open')
+    }
+    for(const btn of btns){
+        btn.addEventListener('click', show)
+    }
+    closeIcon.addEventListener('click', hide)
+</script>
