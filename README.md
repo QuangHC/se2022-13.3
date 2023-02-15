@@ -63,6 +63,8 @@ Finally, you have **Sold** screen, show you all of your product was sold and det
 
 <img src="https://drive.google.com/uc?export=view&id=1MXDuqZOWcjFcnCiXgT3TK4db5b3CgNvJ" width="200" height="420">
 
+<img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.15752-9/330824167_1215359896036852_1642866670252515177_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=ae9488&_nc_ohc=DEIIZFNFu-sAX_0zxvG&_nc_ht=scontent.fhan2-4.fna&oh=03_AdRoDs0UmIYFikg2ZkvhUvHOZrGO0PkWJlUMhcx_TQAJ7w&oe=64145BA9" width="200" height="420">
+
 
 
 
