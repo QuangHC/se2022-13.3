@@ -2,8 +2,8 @@ const ccxt = require('ccxt');
 const moment = require('moment');
 const delay = require('delay');
 RSI_OVERBOUGHT = 70;
-RSI_OVERSOLD = 30;
-AMOUNT = 0.01;
+RSI_OVERSOLD = 69;
+AMOUNT = 0.001;
 
 const binance = new ccxt.binance({
     apiKey: 'EPjRvlWCGUKEegQ6qxAYBR3EWEhpyV2PFJifroza4qbj7dH5xRWvehiNZQvAerUS',
@@ -12,17 +12,21 @@ const binance = new ccxt.binance({
 
 binance.setSandboxMode(true)
 
-async function printBalance() {
+var resp = "";
+
+async function sendBalance(btcPrice) {
     const balance = await binance.fetchBalance();
     const total = balance.total;
-    console.log(`Balance: BTC ${total.BTC}, USDT: ${total.USDT}`);
-    //console.log(`Total USDT: ${(total.BTC - 1) * btcPrice + total.USDT}. \n`);
-    // console.log(balance);
+    var btc = total.BTC;
+    var usdt = total.USDT;
+    var totalUSDT = (total.BTC - 1) * btcPrice + total.USDT;
+    resp = (btc + " " + usdt + " " + totalUSDT);
 }
+var state = "";
 
 async function tick(amount) {
     const closes = [];
-    const prices = await binance.fetchOHLCV('BTC/USDT', '1m', undefined, 14);
+    const prices = await binance.fetchOHLCV('BTC/USDT', timeframe='1m', undefined, 14);
     AMOUNT = amount;
 
     for (let i = 0; i < prices.length; i++) {
@@ -44,7 +48,7 @@ async function tick(amount) {
     else {
         console.log("Nothing");
     }
-    printBalance();
+    await sendBalance(closes[closes.length - 1]);
 }
 
 function CalculateRsi(closePrices) {
@@ -68,15 +72,14 @@ function CalculateRsi(closePrices) {
     return 100.0 - (100.0 / (1 + relativeStrength));
 }
 
-var state = "";
 module.exports = async function trade(s, amount) {
     state = s;
     while (state == "on") {
         await tick(amount);
+        console.log("Balance " + resp);
         await delay(60 * 100);
     }
 }
-
 
 
 

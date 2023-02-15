@@ -1,4 +1,5 @@
 var express = require("express");
+const ccxt = require('ccxt');
 const Binance = require('node-binance-api');
 var fs = require("fs");
 var app = express();
@@ -20,10 +21,15 @@ function loadConfigFile(file) {
     fs.readFile(file, "utf-8", function (err, data) {
         if (err) throw err;
         obj = JSON.parse(data);
-        const binance = new Binance().options({
+        const binanceSend = new Binance().options({
             APIKEY: obj.API,
             APISECRET: obj.KEY
         });
-        require("./routes/client")(app, obj, binance);
+        const binance = new ccxt.binance({
+            apiKey: 'EPjRvlWCGUKEegQ6qxAYBR3EWEhpyV2PFJifroza4qbj7dH5xRWvehiNZQvAerUS',
+            secret: 'gMPo4NxCwoBYvGtnTpfcXFP2KeMx0m5gfFwRB9WCFEHugrHM5Ylk5806dLn841YI',
+        });
+        binance.setSandboxMode(true);
+        require("./routes/client")(app, obj, binance, binanceSend);
     });
 }

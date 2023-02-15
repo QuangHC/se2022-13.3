@@ -12,8 +12,17 @@
     <script src="./socket.io/socket.io.js"></script>
     <script>
         var socket = io("http://localhost:3000");
-        socket.on("server-send-prices", function (data) {
-            $("h2.prices-btc").html(data);
+        socket.on("server-send-usdt", function (data) {
+            console.log(data);
+            $("h2.usdt").html(data);
+        });
+        socket.on("server-send-btc", function (data) {
+            console.log(data);
+            $("h2.btc").html(data);
+        });
+        socket.on("server-send-total", function (data) {
+            console.log(data);
+            $("h2.total").html(data);
         });
         $(document).ready(function () {
             $("#on").click(function(){
@@ -69,8 +78,14 @@
             <!-- TradingView Widget END -->
         </div>
         <div id="right">
-            <h1>BTC/USDT</h1>
-            <h2 class="prices-btc" style="font-size: 30px;"></h2>
+            <h1>BTC</h1>
+            <h2 class="btc" style="font-size: 30px;"></h2>
+
+            <h1>USDT</h1>
+            <h2 class="usdt" style="font-size: 30px;"></h2>
+
+            <h1>TOTAL</h1>
+            <h2 class="total" style="font-size: 30px;"></h2>
 
             <h1>BALANCE</h1>
             <h2 class="balance" style="font-size: 30px;">X</h2>
