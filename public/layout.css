@@ -1,8 +1,9 @@
 body{
-    background-color: whitesmoke;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     display: block;
+    background-image: url(https://wallpaperaccess.com/full/5851940.png);
+    color: rgb(240, 185, 11);
 }
 
 #left {
@@ -12,9 +13,10 @@ body{
 }
 
 #right{
-    width: 600px;
+    width: 577px;
     float: right;
-    min-height: 500px;
+    height: 577px;
+    background-color:whitesmoke;
 }
 
 @keyframes filling {
@@ -27,7 +29,7 @@ body{
   }
   
   .container-text {
-    background-image:  url(https://img.lovepik.com/photo/50078/3259.jpg_wh860.jpg);
+    background-image:  url(https://image.vtcnews.vn/resize/th/upload/2023/02/12/gia-bitcoin-13-2-vtc-news-15094562.jpeg);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     color:  #FFFFFF;

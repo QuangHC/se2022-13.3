@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Binance API</title>
     <link rel="stylesheet" href="./layout.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./socket.io/socket.io.js"></script>
     <script>
@@ -78,16 +80,27 @@
             <!-- TradingView Widget END -->
         </div>
         <div id="right">
-            <h1>BTC</h1>
+            <h1 style="font-size: 25px;">
+                BTC
+                <ion-icon name="logo-bitcoin" style="color: rgb(14, 203, 129);"></ion-icon>
+            </h1>
             <h2 class="btc" style="font-size: 30px; color: brown;"></h2>
 
-            <h1>USDT</h1>
+            <h1 style="font-size: 25px;">
+                USDT
+                <ion-icon name="logo-usd" style="color: rgb(14, 203, 129);"></ion-icon on-icon>
+            </h1>
             <h2 class="usdt" style="font-size: 30px; color: brown;"></h2>
 
-            <h1>TOTAL</h1>
+            <h1 style="font-size: 25px;">
+                TOTAL
+                <ion-icon name="logo-dropbox" style="color: rgb(14, 203, 129);"></ion-icon>
+            </h1>
             <h2 class="total" style="font-size: 30px; color: brown;"></h2>
 
-            <h1>TRADING BOT</h1>
+            <h1>TRADING BOT
+                <ion-icon name="logo-octocat" style="color: rgb(14, 203, 129);"></ion-icon>
+            </h1>
             <label for="amount" style="font-size: 30px">Amount: </label>
             <input type="text" id="amount" name="amount" value="0.01" placeholder="0.01" style="margin-bottom: 25px ;padding: 15px; border: 2px; font-size: 30px; color: brown; border-radius: 10px;">
             <br>
