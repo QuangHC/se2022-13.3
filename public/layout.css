@@ -19,12 +19,6 @@ body{
     min-height: 580px;
 }
 
-.green{
-  background-color: green !important;
-}
-.red{
-  background-color: red !important;
-}
 @keyframes filling {
     from{
       background-position: center 25%;
@@ -43,6 +37,7 @@ body{
     font-size: 80px;
     animation: filling 3s ease forwards;
   }
+
 
 .button {
     border-radius: 4px;
@@ -100,6 +95,8 @@ body{
   border-radius: 4px;
 }
 
-
-
+.greenColor {
+  background-color: green;
+  color: white;
+}
 

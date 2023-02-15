@@ -83,8 +83,8 @@
             <label for="amount">Amount: </label>
             <input type="text" id="amount" name="amount" value="0.01" placeholder="0.01">
             <br>
-            <button class="button js-on" id="on"><span>On </span></button>
-            <button class="button js-off" id="off"><span>Off </span></button>
+            <button class="button" id="on" onclick="changeColor(1)"><span>On </span></button>
+            <button class="button" id="off" onclick="changeColor(-1)"><span>Off </span></button>
         </div>  
     </div>
 </body>
@@ -106,4 +106,18 @@
         btn.addEventListener('click', show)
     }
     closeIcon.addEventListener('click', hide)
+
+
+    function changeColor(str) {
+        var onBtn = document.getElementById("on");
+        var offBtn = document.getElementById("off");
+        if(str==1){
+            offBtn.classList.remove("greenColor");
+            onBtn.classList.toggle("greenColor");
+        }else {
+            offBtn.classList.toggle("greenColor");
+            onBtn.classList.remove("greenColor");
+        }
+    }
 </script>
+
