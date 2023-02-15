@@ -2,8 +2,8 @@ const ccxt = require('ccxt');
 const moment = require('moment');
 const delay = require('delay');
 RSI_OVERBOUGHT = 70;
-RSI_OVERSOLD = 69;
-AMOUNT = 0.001;
+RSI_OVERSOLD = 30;
+AMOUNT = 0.01;
 
 const binance = new ccxt.binance({
     apiKey: 'EPjRvlWCGUKEegQ6qxAYBR3EWEhpyV2PFJifroza4qbj7dH5xRWvehiNZQvAerUS',

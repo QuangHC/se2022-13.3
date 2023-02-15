@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Binance API</title>
     <link rel="stylesheet" href="./layout.css">
-    <link href='https://css.gg/close.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./socket.io/socket.io.js"></script>
     <script>
@@ -29,13 +28,13 @@
             $("#on").click(function(){
                 var amount = parseFloat($("#amount").val())
                 $.get("./on/"+amount, function(data) {
-                    // alert("Bot is Running.")
+                    alert("Bot is Running.")
                     console.log(data);
                 });
             });
             $("#off").click(function(){
                 $.get("./off", function(data) {
-                    // alert("Bot is Ended.")  
+                    alert("Bot is Ended.")  
                     console.log(data);
                 });
             });
@@ -44,11 +43,8 @@
 </head>
 
 <body>
-    <div class="message">
-        <i class="gg-close" style="position: absolute; right: 0; top: 0; z-index: 100;"></i>
-    </div>
     <div class="container-text">
-        Binance Trading
+        BINANCE TRADING
     </div>
     <div id="contain">
         <div id="left">
@@ -62,7 +58,7 @@
                 <script type="text/javascript">
                     new TradingView.widget(
                         {
-                            "width": 980,
+                            "width": 900,
                             "height": 610,
                             "symbol": "BINANCE:BTCUSDT",
                             "interval": "60",
@@ -83,23 +79,20 @@
         </div>
         <div id="right">
             <h1>BTC</h1>
-            <h2 class="btc" style="font-size: 30px;"></h2>
+            <h2 class="btc" style="font-size: 30px; color: brown;"></h2>
 
             <h1>USDT</h1>
-            <h2 class="usdt" style="font-size: 30px;"></h2>
+            <h2 class="usdt" style="font-size: 30px; color: brown;"></h2>
 
             <h1>TOTAL</h1>
-            <h2 class="total" style="font-size: 30px;"></h2>
-
-            <h1>BALANCE</h1>
-            <h2 class="balance" style="font-size: 30px;">X</h2>
+            <h2 class="total" style="font-size: 30px; color: brown;"></h2>
 
             <h1>TRADING BOT</h1>
-            <label for="amount">Amount: </label>
-            <input type="text" id="amount" name="amount" value="0.01" placeholder="0.01">
+            <label for="amount" style="font-size: 30px">Amount: </label>
+            <input type="text" id="amount" name="amount" value="0.01" placeholder="0.01" style="margin-bottom: 25px ;padding: 15px; border: 2px; font-size: 30px; color: brown; border-radius: 10px;">
             <br>
             <button class="button" id="on" onclick="changeColor(1)"><span>On </span></button>
-            <button class="button" id="off" onclick="changeColor(-1)"><span>Off </span></button>
+            <button class="button" id="off" onclick="changeColor(-1)" style="margin-left: 40px;"><span>Off </span></button>
         </div>  
     </div>
 </body>
@@ -107,22 +100,6 @@
 </html>
 
 <script>
-    const btns = document.querySelectorAll('.button')
-    const mess = document.querySelector('.message')
-    const closeIcon = document.querySelector('.gg-close')
-  
-    function show(){
-        mess.classList.add('open')
-    }
-    function hide(){
-        mess.classList.remove('open')
-    }
-    for(const btn of btns){
-        btn.addEventListener('click', show)
-    }
-    closeIcon.addEventListener('click', hide)
-
-
     function changeColor(str) {
         var onBtn = document.getElementById("on");
         var offBtn = document.getElementById("off");
