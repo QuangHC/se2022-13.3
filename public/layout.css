@@ -15,7 +15,6 @@ body{
     width: 600px;
     float: right;
     min-height: 500px;
-    background-color: aliceblue;
 }
 
 @keyframes filling {
